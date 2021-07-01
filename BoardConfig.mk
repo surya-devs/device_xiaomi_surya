@@ -35,8 +35,13 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_surya
 TARGET_INPUTDISPATCHER_SKIP_EVENT_KEY := 96
 
 # Kernel
-TARGET_KERNEL_CONFIG := surya_defconfig
+TARGET_KERNEL_CONFIG := surya-perf_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/surya
+TARGET_KERNEL_CLANG_VERSION := 13
+TARGET_KERNEL_ADDITIONAL_FLAGS += LD=ld.lld AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
+KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-13/bin
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-13
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072

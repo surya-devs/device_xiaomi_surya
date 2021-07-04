@@ -40,8 +40,8 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/surya
 TARGET_KERNEL_CLANG_VERSION := 13
 TARGET_KERNEL_ADDITIONAL_FLAGS += LD=ld.lld AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
-KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-13/bin
-TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-13
+KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-proton/bin
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-proton
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
